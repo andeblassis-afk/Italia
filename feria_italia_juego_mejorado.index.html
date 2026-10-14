@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Italia: del plato a nuestro cuerpo</title>
+<style>
+:root{--bg:#fbf6ec;--card:#fff;--tx:#23302a;--mut:#5d6b63;--g:#2f8f4e;--r:#c8383b;--y:#e0a21b;--bd:#e3d9c5;--ac:#2f8f4e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17201b;--card:#222e27;--tx:#f0ebdd;--mut:#a9b5ad;--bd:#35463c}}
+:root[data-theme="dark"]{--bg:#17201b;--card:#222e27;--tx:#f0ebdd;--mut:#a9b5ad;--bd:#35463c}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(ellipse at top,#fffdf7 0%,var(--bg) 60%);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:clamp(12px,3vw,22px)}
+header{text-align:center;padding:10px 0 14px}
+.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--g);margin-bottom:5px}
+h1{font-size:clamp(21px,5vw,29px);line-height:1.15;margin:0}h1 span{display:inline-block;background:linear-gradient(90deg,var(--g) 33%,#fff 33% 66%,var(--r) 66%);width:36px;height:14px;border:1px solid var(--bd);border-radius:3px;vertical-align:middle;margin-right:6px}
+.welcome{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:13px 15px;box-shadow:0 5px 18px #4b3a1710;margin:4px 0 10px}
+.welcome-icon{font-size:34px;background:#f5ead4;border-radius:14px;padding:7px}
+.welcome-copy strong{font-size:16px}.welcome-copy p{margin:2px 0 0;color:var(--mut);font-size:13px}
+.progress-panel{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px;margin-bottom:10px}
+.progress-top,.progress-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px}
+.progress-top{font-weight:700}.progress-top strong{color:var(--g);font-size:13px}
+.progress-track{height:8px;background:var(--bd);border-radius:20px;overflow:hidden;margin:8px 0}
+#progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--g),#80bb65);border-radius:20px;transition:width .25s ease}
+.progress-bottom{color:var(--mut)}
+.sub{color:var(--mut);font-size:13px}
+nav{display:flex;gap:7px;overflow-x:auto;padding:8px 0 12px;scrollbar-width:thin}
+nav button{flex:1 0 auto;padding:10px 12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;font-weight:700;font-size:13px;box-shadow:0 2px 4px #00000008;transition:transform .15s,border-color .15s}
+nav button:active{transform:scale(.98)}
+nav button.on{border-color:var(--ac);background:var(--ac);color:#fff}
+nav button.completed:after{content:" ✓";font-weight:900}
+.how{background:var(--card);border:1px dashed var(--bd);border-left:4px solid var(--g);border-radius:13px;padding:12px 14px;font-size:14px;margin-bottom:12px;box-shadow:0 3px 12px #00000005}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.c{background:var(--card);border:2px solid var(--bd);border-radius:14px;padding:10px 5px;text-align:center;color:var(--tx);font-size:14px;font-weight:650;min-height:78px;transition:border-color .15s,transform .15s,box-shadow .15s}
+.c:active{transform:scale(.97)}button{cursor:pointer}button:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+.c .e{font-size:30px;display:block}.c small{display:block;color:var(--mut);font-weight:400;font-size:12px}
+.c.sel{border-color:var(--y);box-shadow:0 0 0 3px var(--y)}.c.done{opacity:.35;pointer-events:none}
+.btns{display:grid;gap:8px;margin:10px 0}
+.b{padding:13px 14px;border-radius:13px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font-size:15px;font-weight:650;text-align:left;width:100%;transition:border-color .15s,transform .15s}
+.b:active{transform:scale(.99)}
+.b small{display:block;font-weight:400;color:var(--mut)}
+.msg{min-height:44px;padding:11px 13px;border-radius:13px;margin:10px 0;background:var(--card);border:2px solid var(--bd);font-size:14px}
+.msg.ok{border-color:var(--g)}.msg.no{border-color:var(--r)}.msg.mid{border-color:var(--y)}
+.big{font-size:60px;text-align:center}
+.next{background:var(--ac);color:#fff;border:0;border-radius:13px;padding:13px 18px;font-weight:800;font-size:16px;width:100%;box-shadow:0 4px 10px #2f8f4e20;transition:filter .15s,transform .15s}
+.next:active{transform:scale(.99);filter:brightness(.95)}
+.plate{display:flex;flex-wrap:wrap;gap:6px;min-height:84px;padding:10px;border-radius:50%/30%;background:var(--card);border:4px double var(--bd);justify-content:center;align-items:center;margin:8px 0}
+.plate .c{width:74px}
+.sc{text-align:center;font-weight:700;margin:6px 0}
+.step{display:flex;gap:8px;align-items:center;background:var(--card);border:2px solid var(--g);border-radius:12px;padding:8px;margin:6px 0;font-size:14px}
+.step b{font-size:15px}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}.sh{animation:sh .3s}
+@media (max-width:420px){.grid{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))}.c{font-size:13px}.c .e{font-size:28px}.big{font-size:52px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></head><body><main>
+<header>
+  <div class="eyebrow">🇮🇹 FERIA DE NACIONES · CENS</div>
+  <h1><span></span> Italia: del plato a nuestro cuerpo</h1>
+  <div class="sub">Benvenuti! · Ciencias Naturales + Inglés</div>
+</header>
+<section class="welcome" aria-label="Cómo jugar">
+  <div class="welcome-icon">🍝</div>
+  <div class="welcome-copy">
+    <strong>¡Aprendé jugando!</strong>
+    <p>Superá los 5 desafíos, sumá aciertos y descubrí qué pasa con los alimentos en nuestro cuerpo.</p>
+  </div>
+</section>
+<section class="progress-panel" aria-label="Progreso de la partida">
+  <div class="progress-top"><span id="progress-label">Desafíos completados: 0 de 5</span><strong id="progress-pct">0%</strong></div>
+  <div class="progress-track"><div id="progress-fill"></div></div>
+  <div class="progress-bottom"><span>🏆 Tu recorrido</span><span id="progress-tip">Elegí un desafío para empezar</span></div>
+</section>
+<nav id="nav" aria-label="Desafíos"></nav><div id="app" aria-live="polite"></div>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const F=[
+["🍅","Tomate","Tomato","Verdura","reg","Aporta vitaminas y minerales.","Pomodoro"],
+["🌿","Albahaca","Basil","Verdura","reg","Aporta vitaminas y minerales.","Basilico"],
+["🥦","Brócoli","Broccoli","Verdura","reg","Aporta vitaminas, minerales y fibra.","Broccoli"],
+["🍝","Pasta","Pasta","Cereal","ene","Aporta principalmente hidratos de carbono.","Spaghetti"],
+["🍚","Arroz","Rice","Cereal","ene","Aporta principalmente hidratos de carbono.","Riso"],
+["🍞","Pan","Bread","Cereal","ene","Aporta principalmente hidratos de carbono.","Pane"],
+["🍗","Pollo","Chicken","Proteína","con","Aporta proteínas.","Pollo"],
+["🥚","Huevo","Egg","Proteína","con","Aporta proteínas y grasas.","Uovo"],
+["🧀","Queso","Cheese","Lácteo","con","Aporta proteínas, grasas y calcio.","Mozzarella"],
+["🍓","Frutilla","Strawberry","Fruta","reg","Aporta vitaminas, minerales y fibra.","Fragola"],
+["🍎","Manzana","Apple","Fruta","reg","Aporta vitaminas, minerales y fibra.","Mela"],
+["💧","Agua","Water","Bebida","",'Ayuda a mantener la hidratación.',"Acqua"],
+["🫒","Aceite de oliva","Olive oil","Grasa","","Aporta grasas.","Olio d'oliva"]];
+const N={ene:["⚡ Energía","Hidratos de carbono","Ayudan a obtener energía para realizar nuestras actividades."],con:["🧱 Construcción","Proteínas","Ayudan al crecimiento y a la formación y reparación de tejidos."],reg:["🛡️ Regulación","Vitaminas y minerales","Participan en distintas funciones del organismo."]};
+const S=[["🥗","Insalata (ensalada)","s","Tiene verduras variadas. Para mejorarla: agregar una fuente de proteína, como huevo o pollo, y acompañar con agua."],
+["🍝","Pasta con verdure","s","Puede formar parte de una alimentación equilibrada. Se puede sumar una fuente de proteína y moderar las salsas muy grasas."],
+["🍕","Pizza","o","Puede consumirse de vez en cuando. Para mejorarla: agregar verduras, moderar el queso y acompañar con agua."],
+["🍨","Gelato","o","Tiene azúcar y grasas. Puede disfrutarse ocasionalmente y en una porción adecuada."],
+["🍕","Pizza con mucho fiambre","n","Tiene mucha grasa y sal. Para mejorarla: usar menos fiambre y agregar verduras."],
+["🍬","Caramelle (golosinas)","n","Aportan principalmente azúcares y tienen pocos nutrientes. Conviene reservarlas para ocasiones puntuales."]];
+const SL={s:"🟢 Opción saludable",o:"🟡 Puede consumirse ocasionalmente",n:"🔴 No es una buena elección habitual"};
+const V=[["👄","Boca","El alimento se tritura con los dientes y se mezcla con la saliva. Así comienza la digestión."],
+["🫃","Estómago","El alimento se mezcla con los jugos gástricos y continúa descomponiéndose."],
+["🌀","Intestino","Se absorben los nutrientes que pueden ser aprovechados por el organismo."],
+["🩸","Sangre","Transporta los nutrientes absorbidos hacia distintas partes del cuerpo."],
+["🔬","Células","Las células utilizan los nutrientes, por ejemplo, para obtener energía y realizar sus funciones."],
+["🚽","Eliminación","El cuerpo elimina las sustancias de desecho que ya no necesita."]];
+const sh=a=>[...a].sort(()=>Math.random()-.5);
+const completed=new Set();
+const labels=["Nutrientes","¿Saludable?","El viaje","Armá tu plato","Parole italiane"];
+function refreshProgress(){
+  const n=completed.size, pct=Math.round(n/5*100);
+  const label=document.getElementById("progress-label"), pc=document.getElementById("progress-pct");
+  const fill=document.getElementById("progress-fill"), tip=document.getElementById("progress-tip");
+  if(label)label.textContent=`Desafíos completados: ${n} de 5`;
+  if(pc)pc.textContent=pct+"%";
+  if(fill)fill.style.width=pct+"%";
+  if(tip)tip.textContent=n===5?"¡Complimenti! Completaste todo":n===0?"Elegí un desafío para empezar":"¡Bien! Seguí con el próximo desafío";
+  document.querySelectorAll("nav button").forEach((b,i)=>b.classList.toggle("completed",completed.has(i)));
+}
+const T=[["1 · Nutrientes","n1"],["2 · ¿Saludable?","n2"],["3 · El viaje","n3"],["4 · Tu plato","n4"],["5 · Italiano","n5"]];
+let cur=0,st={};
+$("#nav").innerHTML=T.map((t,i)=>`<button data-i="${i}">${t[0]}</button>`).join("");
+$("#nav").onclick=e=>{if(e.target.dataset.i!=null)go(+e.target.dataset.i)};
+function go(i){cur=i;st={};document.querySelectorAll("nav button").forEach((b,j)=>b.classList.toggle("on",j==i));[g1,g2,g3,g4,g5][i]();refreshProgress();window.scrollTo({top:0,behavior:"smooth"})}
+function end(t,again){completed.add(cur);refreshProgress();return `<div class="big">🏆</div><div class="sc">${t}</div><div class="msg ok">¡Desafío completado! Podés repetirlo para mejorar o avanzar al siguiente.</div><button class="next" onclick="go(${cur})">↻ Jugar de nuevo</button>${cur<4?`<button class="next" style="margin-top:8px;background:var(--y);color:#222" onclick="go(${cur+1})">Siguiente desafío ➜</button>`:""}`}
+function msg(t,k){const m=$("#m");m.className="msg "+k;m.innerHTML=t}
+/* 1 */
+function g1(){F.forEach(f=>delete f.d);st={items:sh(F.filter(f=>f[4])),sel:null,ok:0,err:0};r1()}
+function r1(){const a=$("#app");
+a.innerHTML=`<div class="how">🇮🇹 ¡Estás en una cocina italiana! <b>ELEGÍ</b> un ingrediente y <b>PENSÁ</b>: ¿qué nutriente aporta principalmente? Tocá la categoría correcta.</div>
+<div class="grid" id="g">${st.items.map((f,i)=>`<button class="c ${st.sel===i?"sel":""} ${f.d?"done":""}" data-i="${i}"><span class="e">${f[0]}</span>${f[6]}<small>${f[1]}</small></button>`).join("")}</div>
+<div class="btns">${Object.keys(N).map(k=>`<button class="b" data-k="${k}">${N[k][0]}: ${N[k][1]}<small>${N[k][2]}</small></button>`).join("")}</div>
+<div class="msg" id="m">Elegí una tarjeta de alimento.</div><div class="sc">✔ ${st.ok} · ✖ ${st.err}</div>`;
+$("#g").onclick=e=>{const b=e.target.closest("button");if(b){st.sel=+b.dataset.i;r1()}};
+a.querySelectorAll(".b").forEach(b=>b.onclick=()=>{if(st.sel===null)return msg("Primero elegí un alimento 👆","mid");
+const f=st.items[st.sel];if(f[4]===b.dataset.k){f.d=1;st.ok++;st.sel=null;if(st.items.every(x=>x.d)){a.innerHTML=end(`¡Clasificaste todo! ${st.ok} aciertos, ${st.err} errores`);return}r1();msg("✅ ¡Bravo! "+f[6]+" ("+f[1]+"): "+f[5],"ok")}
+else{st.err++;r1();msg("❌ ¡Mamma mia! Probá de nuevo: pensá qué hace "+f[6]+" ("+f[1].toLowerCase()+") en tu cuerpo.","no")}})}
+/* 2 */
+function g2(){st={i:0,ok:0,items:sh(S),ans:0};r2()}
+function r2(){const a=$("#app"),s=st.items[st.i];
+a.innerHTML=`<div class="how"><b>PENSÁ</b>: ¿es una opción saludable, ocasional o no habitual? (${st.i+1}/6)</div>
+<div class="big">${s[0]}</div><h2 style="text-align:center;margin:0">${s[1]}</h2>
+<div class="btns">${Object.keys(SL).map(k=>`<button class="b" data-k="${k}">${SL[k]}</button>`).join("")}</div><div class="msg" id="m">Elegí una respuesta.</div>`;
+a.querySelectorAll(".b").forEach(b=>b.onclick=()=>{if(st.ans)return;st.ans=1;const ok=b.dataset.k===s[2];if(ok)st.ok++;
+msg((ok?"✅ ¡Bravo! ":"❌ Era: "+SL[s[2]]+". ")+s[3]+"<br><br><b>¿Qué cambio le harías para que sea más saludable?</b>",ok?"ok":"no");
+a.insertAdjacentHTML("beforeend",`<button class="next" id="nx">${st.i<5?"Siguiente":"Ver resultado"}</button>`);
+$("#nx").onclick=()=>{st.ans=0;if(st.i<5){st.i++;r2()}else a.innerHTML=end(`${st.ok} de 6 aciertos`)}})}
+/* 3 */
+function g3(){st={n:0,path:[],pool:sh(V.map((v,i)=>i))};r3()}
+function r3(){const a=$("#app");
+a.innerHTML=`<div class="how">Un plato de spaghetti 🍝 viaja por tu cuerpo. <b>ORDENÁ</b>: tocá las etapas en el orden en que viaja el alimento, ¡desde la boca hasta la eliminación!</div>
+${st.path.map(i=>`<div class="step"><span style="font-size:28px">${V[i][0]}</span><div><b>${st.path.indexOf(i)+1}. ${V[i][1]}</b><br>${V[i][2]}</div></div>`).join("")}
+<div class="grid" id="g">${st.pool.map(i=>`<button class="c" data-i="${i}"><span class="e">${V[i][0]}</span>${V[i][1]}</button>`).join("")}</div><div class="msg" id="m">¿Cuál es el paso ${st.n+1}?</div>`;
+$("#g").onclick=e=>{const b=e.target.closest("button");if(!b)return;const i=+b.dataset.i;
+if(i===st.n){st.path.push(i);st.pool=st.pool.filter(x=>x!==i);st.n++;if(st.n===6){r3();$("#app").insertAdjacentHTML("beforeend",end("¡Recorrido completo!"));return}r3();msg("✅ ¡Muy bien!","ok")}
+else{$("#g").classList.add("sh");setTimeout(()=>$("#g").classList.remove("sh"),300);msg("❌ Ese no es el siguiente paso. ¡Probá otra vez!","no")}}}
+/* 4 */
+function g4(){st={plate:[]};r4()}
+function r4(){const a=$("#app"),p=st.plate,has=g=>p.some(i=>g.includes(F[i][3]));
+a.innerHTML=`<div class="how"><b>ARMÁ</b> tu plato italiano 🇮🇹 equilibrado tocando los alimentos. Tocá uno del plato para sacarlo.</div>
+<div class="plate" id="pl">${p.length?p.map(i=>`<button class="c" data-r="${i}"><span class="e">${F[i][0]}</span>${F[i][2]}</button>`).join(""):'<span class="sub">Tu plato está vacío 🍽️</span>'}</div>
+<div class="grid" id="g">${F.map((f,i)=>`<button class="c ${p.includes(i)?"done":""}" data-i="${i}"><span class="e">${f[0]}</span>${f[6]}<small>${f[1]} · ${f[2]}</small></button>`).join("")}</div>
+<button class="next" style="margin-top:10px" id="ck">Listo, ¡explicá mi plato!</button><div class="msg" id="m">Elegí alimentos de diferentes grupos.</div>`;
+$("#g").onclick=e=>{const b=e.target.closest("button");if(b){st.plate.push(+b.dataset.i);r4()}};
+$("#pl").onclick=e=>{const b=e.target.closest("button");if(b){st.plate=st.plate.filter(x=>x!==+b.dataset.r);r4()}};
+$("#ck").onclick=()=>{if(!p.length)return msg("Agregá al menos un alimento 👆","mid");
+const miss=[];if(!has(["Verdura","Fruta"]))miss.push("verduras o frutas");if(!has(["Cereal"]))miss.push("cereales/hidratos");if(!has(["Proteína","Lácteo"]))miss.push("proteínas");
+const h=n=>p.some(i=>F[i][1]===n);const d=h("Pasta")&&h("Tomate")?"🍝 ¡Armaste una Pasta al pomodoro!":h("Pan")&&h("Tomate")?"🍞 ¡Esto es una Bruschetta!":h("Arroz")&&h("Queso")?"🍚 ¡Casi un Risotto!":"";let t=p.map(i=>`<b>${F[i][0]} ${F[i][6]} / ${F[i][2]}</b> (${F[i][3]}): ${F[i][5]}`).join("<br>");
+t+=(d?"<br><br>"+d:"")+`<br><br>🗣️ En inglés: ${p.map(i=>F[i][2]).join(", ")}.`;
+if(miss.length)msg("🟡 ¡Casi! Te falta: <b>"+miss.join(", ")+"</b>.<br><br>"+t,"mid");
+else msg("🟢 <b>¡Plato equilibrado!</b>"+(has(["Bebida"])?" ¡Y con agua!":" Podés sumar agua 💧.")+"<br><br>"+t+"<br><br><b>¿Por qué elegiste estos alimentos?</b>","ok")}}
+function g5(){st={i:0,ok:0,q:sh(F).slice(0,8),ans:0};r5()}
+function r5(){const a=$("#app"),f=st.q[st.i],o=sh([f,...sh(F.filter(x=>x!==f)).slice(0,2)]);
+a.innerHTML=`<div class="how"><b>PAROLE ITALIANE</b> 🇮🇹: ¿qué significa en español? (${st.i+1}/8)</div><div class="big">${f[0]}</div><h2 style="text-align:center;margin:0">${f[6]}</h2><div class="btns">${o.map(x=>`<button class="b" data-n="${x[1]}">${x[1]}</button>`).join("")}</div><div class="msg" id="m">Elegí una respuesta.</div>`;
+a.querySelectorAll(".b").forEach(b=>b.onclick=()=>{if(st.ans)return;st.ans=1;const ok=b.dataset.n===f[1];if(ok)st.ok++;msg(ok?`✅ ¡Bravo! ${f[6]} = ${f[1]} = ${f[2]} 🗣️`:`❌ Era ${f[1]}. En inglés: ${f[2]}.`,ok?"ok":"no");a.insertAdjacentHTML("beforeend",`<button class="next" id="nx">${st.i<7?"Siguiente":"Ver resultado"}</button>`);$("#nx").onclick=()=>{st.ans=0;if(st.i<7){st.i++;r5()}else a.innerHTML=end(`${st.ok} de 8 — ¡Grazie!`)}})}
+go(0);
+</script></body></html>
